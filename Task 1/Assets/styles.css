@@ -1,0 +1,149 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    background: #010718;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #405fbd;
+    width: 100%;
+    padding: 2rem;
+}
+
+#slackDisplayImage{
+    /* height:10rem; */
+    width: 10rem;
+    border-radius: 50%;
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.leftDay{
+    display: flex;
+    gap: .5rem;
+}
+
+#currentDayOfTheWeek,
+#date,
+#currentUTCTime,
+#myTrack{
+    color: #010718;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+a{
+    color: #010718;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+a:hover{
+    color: #d4d7de;
+    transform: scale(1.2);
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text{
+    color: #5e6fa1;
+    position: relative;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+
+.text:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width:100%;
+     background: #010718; 
+    border-left: 5px solid #405fbd;
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate{
+    40%, 60%{
+        left: 100%;
+    }
+
+    100%{
+        left: 0%
+    }
+}
+
+
+
+
+@media (max-width: 750px){
+    body{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    nav{
+        flex-direction: column;
+        max-width: 669px;
+        width: 80%;
+        margin-top: 1.5rem;
+    }
+
+    .text{
+        font-size: 2rem;
+    }
+    
+    #slackDisplayImage{
+        width: 12rem;
+        border-radius: 10%;
+        margin-bottom: 1rem;
+    }
+    #slackUserName{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    #currentDayOfTheWeek,
+    #date,
+    #currentUTCTime,
+    #myTrack{
+    font-size: 1.3rem;
+}
+}
+
+@media (max-width: 350px){
+    #currentDayOfTheWeek,
+    #date,
+    #currentUTCTime,
+    #myTrack{
+    font-size: .9rem;
+}
+#slackUserName{
+    font-size: .9rem;
+}
+}
